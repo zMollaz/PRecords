@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "patients",
+  "info": {
+    "singularName": "patient",
+    "pluralName": "patients",
+    "displayName": "Patient"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "First_name": {
+      "type": "string"
+    },
+    "Last_name": {
+      "type": "string"
+    },
+    "Blood_type": {
+      "type": "string"
+    },
+    "Age": {
+      "type": "integer"
+    },
+    "Ailment": {
+      "type": "string"
+    },
+    "Medication": {
+      "type": "string"
+    },
+    "Last_visit": {
+      "type": "date"
+    },
+    "Allergies": {
+      "type": "string"
+    },
+    "Address": {
+      "type": "string"
+    },
+    "Emergency_contact_name": {
+      "type": "string"
+    },
+    "Emergency_contact_number": {
+      "type": "string"
+    },
+    "Gender": {
+      "type": "string"
+    }
+  }
+}
