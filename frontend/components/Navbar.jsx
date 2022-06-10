@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-import axios from "axios";
+
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -52,16 +52,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const Navbar = () => {
-  axios
-    .get("http://localhost:1337/api/patients", {
-      headers: {
-        "Authorization": process.env.NEXT_PUBLIC_Strapi_ApiToken,
-      },
-    })
-    .then((res) => {
-      console.log(111, res.data.data[0].attributes);
-    })
-    .catch((err) => console.log(err));
 
   return (
     <Box sx={{ flexGrow: 1 }}>
