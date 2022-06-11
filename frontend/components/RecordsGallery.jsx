@@ -1,24 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PatientRecord from "./PatientRecord";
 import axios from "axios";
 const RecordsGallery = () => {
-  const [patData, setPatData] = useState([]);
+  const [patients, setPatients] = useState([]);
 
-  axios
-    .get("http://localhost:1337/api/patients", {
-      headers: {
-        Authorization: process.env.NEXT_PUBLIC_Strapi_ApiToken,
-      },
-    })
-    .then((res) => {
-      console.log(111, res.data.data[0].attributes);
-      setPatData(res.data.data)
-      console.log(222, patData);
-    })
-    .catch((err) => console.log(err));
+  useEffect(() => {
+    const recordsGetter = async () => {
+      try {
+        const res = await axios.get("http://localhost:1337/api/patients", {
+          headers: {
+            Authorization: process.env.NEXT_PUBLIC_Strapi_ApiToken,
+          },
+        });
+
+        setPatients(res.data.data);
+
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    recordsGetter();
+  }, []);
+
   return (
-    <div className="grid grid-col-3 gap-x-3 gap-y-2">
-      <PatientRecord />
+    <div className="grid grid-cols-3 gap-x-3 gap-y-2">
+      {patients.map((patient, index) => (
+        <PatientRecord patient={patient.attributes} key={index} />
+      ))}
     </div>
   );
 };
