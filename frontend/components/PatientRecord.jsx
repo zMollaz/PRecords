@@ -1,5 +1,5 @@
 const PatientRecord = ({ patient, setShowDetails, patientInitials }) => {
-  console.log(545, patient);
+
   const {
     First_name,
     Last_name,
@@ -14,6 +14,7 @@ const PatientRecord = ({ patient, setShowDetails, patientInitials }) => {
     Emergency_contact_number,
     Last_visit,
   } = patient;
+  
   return (
     <div className="absolute h-full flex justify-center items-center w-full top-0 backdrop-blur-md flex-col">
       <div className="rounded-xl relative py-3 px-6 bg-white font-Roboto font-medium shadow-2xl">
