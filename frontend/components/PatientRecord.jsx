@@ -16,7 +16,7 @@ const PatientRecord = ({ patient, setShowDetails, patientInitials }) => {
   } = patient;
   
   return (
-    <div className="absolute h-full flex justify-center items-center w-full top-0 backdrop-blur-md flex-col">
+    <div className="absolute h-full flex justify-center items-center w-full inset-0 backdrop-blur-md flex-col">
       <div className="rounded-xl relative py-3 px-6 bg-white font-Roboto font-medium shadow-2xl">
         {/* <button
           className="w-20 absolute top-0 right-0 rounded-md text-white bg-blue-600 hover:bg-white hover:text-blue-600 border-2 hover:border-blue-600 hover:border-2"
