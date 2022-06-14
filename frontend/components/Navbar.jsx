@@ -8,7 +8,6 @@ import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 
-
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -51,11 +50,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const Navbar = () => {
-
+const Navbar = ({ text, setText }) => {
+  
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" className="bg-blue-600">
         <Toolbar>
           <IconButton
             size="large"
@@ -80,7 +79,11 @@ const Navbar = () => {
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
+              inputProps={{
+                "aria-label": "search",
+                onChange: (e) => setText(e.target.value),
+                value: text,
+              }}
             />
           </Search>
         </Toolbar>
